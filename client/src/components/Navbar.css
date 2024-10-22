@@ -1,0 +1,115 @@
+/* Basic Styles */
+header {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.container {
+    max-width: 140rem;
+    padding: 2rem 13rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-brand>a{
+    color: #243642;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    gap: 3.2rem;
+    list-style: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+.nav-links ul a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #243642; /* Set the color of the options to blue */
+    transition: all .1s ease;
+}
+
+/* Change color on hover */
+.nav-links ul a:hover {
+    color: #629584; /* Darker blue on hover */
+    font-weight: 800;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Rotations for the "X" effect */
+.hamburger .rotate1 {
+    transform: rotate(45deg) translate(5px, 5px);
+
+}
+
+.hamburger .rotate2 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger .hide {
+    opacity: 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .mobile-menu-open ul {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        width: 100%;
+        background-color: white;
+        padding: 2rem;
+        transition: max-height 0.3s ease;
+    }
+
+    .mobile-menu-open {
+        position: relative;
+    }
+
+    .mobile-menu-open ul li {
+        margin: 1rem 0;
+        text-align: center;
+    }
+
+    .mobile-menu-open ul li a {
+        font-size: 2rem;
+        /* Blue links for the mobile view as well */
+    }
+
+    /* When the menu is open, the content is shifted downward */
+    .mobile-menu-open + .content {
+        margin-top: 300px; /* Adjust this value based on menu height */
+    }
+}
+
+/* Transition the content shift smoothly */
+.content {
+    transition: margin-top 0.3s ease;
+}
